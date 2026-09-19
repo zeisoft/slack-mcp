@@ -1,44 +1,25 @@
-# Slack MCP server — through HeyMetra
+<div align="center">
 
-> **Unofficial.** This is not Slack's own MCP server and this repository is not affiliated with, endorsed by or supported by Slack. It documents how [HeyMetra](https://heymetra.com/), a remote MCP server built by Zeisoft, reads Slack.
+<img src="assets/cover.png" alt="Slack through HeyMetra's MCP server" width="100%">
+
+# Slack &times; HeyMetra
 
 **Post to Slack, in whichever channel you say.**
+
+An answer nobody reads is not an answer. Have it delivered to Slack, where the team already is.
 
 [![MCP Registry](https://img.shields.io/badge/MCP_Registry-com.heymetra%2Fheymetra-1f6feb)](https://registry.modelcontextprotocol.io/v0/servers/com.heymetra%2Fheymetra/versions)
 [![Transport](https://img.shields.io/badge/transport-Streamable_HTTP-444)](https://modelcontextprotocol.io/)
 [![Auth](https://img.shields.io/badge/auth-OAuth_2.1-444)](https://heymetra.com/security/)
 [![Connector page](https://img.shields.io/badge/heymetra.com-slack-1f6feb)](https://heymetra.com/connectors/slack/)
 
+```
+https://mcp.heymetra.com/mcp
+```
+
+</div>
+
 ---
-
-## What Slack is
-
-Slack is where your team already works. Connecting it gives your assistant somewhere to post what you ask it to post — and it asks which channel every time, because choosing the channel is choosing who reads it.
-
-## What HeyMetra reads from Slack
-
-Install the app once into your Slack workspace. There is no channel to pick while connecting: the install reaches every public channel in your workspace, plus any private one you invite it to. When you ask for something to be sent, your assistant asks which channel, shows you the exact text and the exact channel, and nothing leaves until you approve it. Everyone in that channel sees what is posted and a posted message cannot be unsent. Nothing is ever read from Slack.
-
-## Permissions
-
-You switch these on per connection, and a permission you leave off is a tool your assistant never sees.
-
-| Permission | What it covers | Changes anything? |
-|---|---|---|
-| **Included with the connection** | What HeyMetra needs to set the connection up and nothing more. It cannot be switched off on its own — removing the connection is how you withdraw it. | No, read only |
-| **Send messages** | Let your assistant post to this channel, with your approval each time. Turn it off and only the test button can reach it. | Yes — every change waits for your approval |
-
-<details>
-<summary>What each permission lets an assistant do, in full</summary>
-
-- Send a message to the linked Slack channel — proposed first, with the exact text, and posted only once you approve. Everyone in that channel sees it, and it cannot be unsent.
-</details>
-
-## What it can change
-
-- Send a message to the linked Slack channel — proposed first, with the exact text, and posted only once you approve. Everyone in that channel sees it, and it cannot be unsent.
-
-A tool that would change something returns the change for a person to approve instead of running it, inside bounds that live in code rather than in a prompt: at most 20 messages a rolling day, counted separately from account changes, and an approval that expires after 30 minutes. [How that works](https://heymetra.com/security/).
 
 ## Connect Slack
 
@@ -167,6 +148,25 @@ _The key is serverUrl, not url — the one every other JSON client spells differ
 Full walkthrough: [heymetra.com/mcp/antigravity/](https://heymetra.com/mcp/antigravity/)
 </details>
 
+## What it may and may not touch
+
+Send a message to the linked Slack channel — proposed first, with the exact text, and posted only once you approve. Everyone in that channel sees it, and it cannot be unsent.
+
+Permissions are switched on per connection, and one you leave off is a tool your assistant never sees.
+
+| Permission | What it covers | Changes anything? |
+|---|---|---|
+| **Included with the connection** | What HeyMetra needs to set the connection up and nothing more. It cannot be switched off on its own — removing the connection is how you withdraw it. | No, read only |
+| **Send messages** | Let your assistant post to this channel, with your approval each time. Turn it off and only the test button can reach it. | Yes — every change waits for your approval |
+
+<details>
+<summary>What each permission lets an assistant do, in full</summary>
+
+- Send a message to the linked Slack channel — proposed first, with the exact text, and posted only once you approve. Everyone in that channel sees it, and it cannot be unsent.
+</details>
+
+Anything that would change something comes back as a proposal you approve, inside bounds that live in code rather than in a prompt: at most 20 messages a rolling day, counted separately from account changes, and an approval that expires after 30 minutes. [How that works](https://heymetra.com/security/).
+
 ## When something goes wrong
 
 <details>
@@ -205,9 +205,19 @@ Full walkthrough: [heymetra.com/mcp/antigravity/](https://heymetra.com/mcp/antig
 
 </details>
 
-## Everything else HeyMetra reads
+## What HeyMetra reads from Slack
 
-One connection answers across accounts — which is the point, because spend lives in one place and revenue in another:
+Install the app once into your Slack workspace. There is no channel to pick while connecting: the install reaches every public channel in your workspace, plus any private one you invite it to. When you ask for something to be sent, your assistant asks which channel, shows you the exact text and the exact channel, and nothing leaves until you approve it. Everyone in that channel sees what is posted and a posted message cannot be unsent. Nothing is ever read from Slack.
+
+<details>
+<summary>About Slack</summary>
+
+Slack is where your team already works. Connecting it gives your assistant somewhere to post what you ask it to post — and it asks which channel every time, because choosing the channel is choosing who reads it.
+</details>
+
+## One connection, not seven
+
+The reason to read Slack through HeyMetra rather than through a server that only knows Slack is everything else it can answer in the same breath:
 
 **Ads** — [Google Ads](https://heymetra.com/connectors/google-ads/) · [Meta](https://heymetra.com/connectors/meta-ads/)
 
@@ -221,17 +231,17 @@ One connection answers across accounts — which is the point, because spend liv
 
 **Channels** — **Slack** · [Telegram](https://github.com/zeisoft/telegram-mcp)
 
-The full catalogue, with what each one can do today, is at [heymetra.com/connectors/](https://heymetra.com/connectors/).
+The full catalogue is at [heymetra.com/connectors/](https://heymetra.com/connectors/).
 
 ## Links
 
-- [Slack connector page](https://heymetra.com/connectors/slack/) — the source this page is generated from
+- [Slack connector page](https://heymetra.com/connectors/slack/)
 - [HeyMetra](https://heymetra.com/) — what the product is
-- [Setup per assistant](https://heymetra.com/mcp/) — eight clients, step by step
+- [Setup for every assistant](https://heymetra.com/mcp/)
 - [Security and limits](https://heymetra.com/security/)
-- [Pricing](https://heymetra.com/pricing/) — paid, no free plan and no trial
+- [Pricing](https://heymetra.com/pricing/)
 - [HeyMetra's own repository](https://github.com/zeisoft/heymetra-mcp)
 
 ---
 
-<sub>This README is generated from HeyMetra's live connector catalogue and refreshed daily; it is committed only when something in it actually changed. Corrections are welcome as issues. Built by <a href="https://zeisoft.com">Zeisoft</a>.</sub>
+<sub>Built by <a href="https://zeisoft.com">Zeisoft</a>, who make HeyMetra. Not affiliated with Slack. This README is generated from HeyMetra's live connector catalogue and refreshed daily; corrections are welcome as issues.</sub>
