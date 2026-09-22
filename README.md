@@ -162,17 +162,22 @@ Full walkthrough: [heymetra.com/mcp/antigravity/](https://heymetra.com/mcp/antig
 
 Send a message to the linked Slack channel — proposed first, with the exact text, and posted only once you approve. Everyone in that channel sees it, and it cannot be unsent.
 
+Propose a change through this account's own API, for operations HeyMetra does not cover. Nothing is sent until you approve it, and HeyMetra cannot undo it afterwards.
+
 Permissions are switched on per connection, and one you leave off is a tool your assistant never sees.
 
 | Permission | What it covers | Changes anything? |
 |---|---|---|
 | **Included with the connection** | What HeyMetra needs to set the connection up and nothing more. It cannot be switched off on its own — removing the connection is how you withdraw it. | No, read only |
 | **Send messages** | Let your assistant post to this channel, with your approval each time. Turn it off and only the test button can reach it. | Yes — every change waits for your approval |
+| **Direct API access** | Let your assistant use this account's own API for anything HeyMetra's other operations do not cover. It reads directly, and what comes back is the provider's own answer rather than a figure HeyMetra has checked. It can also propose changes — those are never applied until you approve them, and HeyMetra cannot undo one afterwards. | Yes — every change waits for your approval |
 
 <details>
 <summary>What each permission lets an assistant do, in full</summary>
 
 - Send a message to the linked Slack channel — proposed first, with the exact text, and posted only once you approve. Everyone in that channel sees it, and it cannot be unsent.
+- Ask this account's own API a question HeyMetra's other operations do not cover. Reads only, and the answer is the provider's own rather than a figure HeyMetra has checked.
+- Propose a change through this account's own API, for operations HeyMetra does not cover. Nothing is sent until you approve it, and HeyMetra cannot undo it afterwards.
 </details>
 
 Anything that would change something comes back as a proposal you approve, inside bounds that live in code rather than in a prompt: at most 20 messages a rolling day, counted separately from account changes, and an approval that expires after 30 minutes. [How that works](https://heymetra.com/security/).
