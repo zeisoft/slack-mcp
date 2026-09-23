@@ -222,7 +222,7 @@ Anything that would change something comes back as a proposal you approve, insid
 
 ## What HeyMetra reads from Slack
 
-Install the app once into your Slack workspace. There is no channel to pick while connecting: the install reaches every public channel in your workspace, plus any private one you invite it to. When you ask for something to be sent, your assistant asks which channel, shows you the exact text and the exact channel, and nothing leaves until you approve it. Everyone in that channel sees what is posted and a posted message cannot be unsent. Nothing is ever read from Slack.
+Install the app once into your Slack workspace. There is no channel to pick while connecting: the install reaches every public channel in your workspace, plus any private one you invite it to. When you ask for something to be sent, your assistant asks which channel, shows you the exact text and the exact channel, and nothing leaves until you approve it. Everyone in that channel sees what is posted and a posted message cannot be unsent. Reading is what the install itself allows and no more — the channel list it needs in order to send, and whatever else that same grant already covers if you ask for it directly. It holds no permission to read message history.
 
 <details>
 <summary>About Slack</summary>
@@ -236,13 +236,15 @@ The reason to read Slack through HeyMetra rather than through a server that only
 
 **Ads** — [Google Ads](https://heymetra.com/connectors/google-ads/) · [Meta](https://heymetra.com/connectors/meta-ads/)
 
-**Analytics** — [Google Analytics 4](https://heymetra.com/connectors/google-analytics-4/) · [Google Search Console](https://github.com/zeisoft/google-search-console-mcp)
+**Analytics** — [Google Analytics 4](https://heymetra.com/connectors/google-analytics-4/) · [Google Search Console](https://github.com/zeisoft/google-search-console-mcp) · [PostHog](https://github.com/zeisoft/posthog-mcp)
 
 **Ecommerce** — [Shopify](https://heymetra.com/connectors/shopify/) · [Trendyol](https://github.com/zeisoft/trendyol-mcp) · [WooCommerce](https://github.com/zeisoft/woocommerce-mcp)
 
 **Revenue & CRM** — [Stripe](https://heymetra.com/connectors/stripe/) · [HubSpot](https://heymetra.com/connectors/hubspot/) · [Zoho CRM](https://github.com/zeisoft/zoho-crm-mcp) · [Zoho SalesIQ](https://github.com/zeisoft/zoho-salesiq-mcp) · [Zoho Marketing Automation](https://github.com/zeisoft/zoho-marketing-automation-mcp)
 
 **Mobile** — [AppsFlyer](https://github.com/zeisoft/appsflyer-mcp) · [RevenueCat](https://heymetra.com/connectors/revenuecat/) · [Adapty](https://github.com/zeisoft/adapty-mcp) · [App Store Connect](https://github.com/zeisoft/app-store-connect-mcp)
+
+**Work** — [Google Calendar](https://heymetra.com/connectors/google-calendar/) · [Google Meet](https://heymetra.com/connectors/google-meet/) · [Jira](https://github.com/zeisoft/jira-mcp)
 
 **Channels** — **Slack** · [Telegram](https://github.com/zeisoft/telegram-mcp)
 
