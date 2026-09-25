@@ -25,19 +25,19 @@ https://mcp.heymetra.com/mcp
 
 **1. Install the HeyMetra app in your Slack workspace**
 
-On the Connections screen choose Slack. Slack shows you what the app may do — post messages, and list channels so it can ask you which one — and you approve it there. You are back in HeyMetra when it is done.
+On the Connections screen choose Slack. Slack shows you what the app may do (post messages, and list channels so it can ask you which one), and you approve it there. You are back in HeyMetra when it is done.
 
 > One install covers the whole workspace. You do not connect Slack again per channel, and there is nothing to choose here.
 
 **2. Invite the app to any PRIVATE channel you want to use**
 
-Public channels need nothing: the app can post to them without joining. A private channel is different — type /invite @HeyMetra in it. Until you do, HeyMetra cannot see that the channel exists, so it will not be offered.
+Public channels need nothing: the app can post to them without joining. A private channel is different: type /invite @HeyMetra in it. Until you do, HeyMetra cannot see that the channel exists, so it will not be offered.
 
 > This is the step people skip and then wonder why a channel is missing from the list. If a private channel is not offered, it has not been invited.
 
 **3. Ask for something to be sent, and name the channel**
 
-Say what you want posted. Your assistant asks which channel, then shows a card with the exact text and the exact channel before anything is sent. Approve it and it goes; until then nothing has left HeyMetra. It posts what you asked for, when you ask — there is nothing here that posts on a timer.
+Say what you want posted. Your assistant asks which channel, then shows a card with the exact text and the exact channel before anything is sent. Approve it and it goes; until then nothing has left HeyMetra. It posts what you asked for, when you ask, and nothing here posts on a timer.
 
 **4. Check it from the Connections screen**
 
@@ -76,7 +76,7 @@ Full walkthrough: [heymetra.com/mcp/claude/](https://heymetra.com/mcp/claude/)
 
 Paste the address above into Settings → Security and login → Developer mode, then chatgpt.com/plugins.
 
-_The endpoint has to include its /mcp path here._
+_The address has to end in /mcp here._
 
 Full walkthrough: [heymetra.com/mcp/chatgpt/](https://heymetra.com/mcp/chatgpt/)
 </details>
@@ -137,7 +137,7 @@ Full walkthrough: [heymetra.com/mcp/codex/](https://heymetra.com/mcp/codex/)
 }
 ```
 
-_Leave the static OAuth fields empty — they exist for servers that cannot register themselves._
+_Leave the static OAuth fields empty; HeyMetra does not need them._
 
 Full walkthrough: [heymetra.com/mcp/cursor/](https://heymetra.com/mcp/cursor/)
 </details>
@@ -153,31 +153,31 @@ Full walkthrough: [heymetra.com/mcp/cursor/](https://heymetra.com/mcp/cursor/)
 }
 ```
 
-_The key is serverUrl, not url — the one every other JSON client spells differently._
+_The key is serverUrl, not url, unlike every other JSON client._
 
 Full walkthrough: [heymetra.com/mcp/antigravity/](https://heymetra.com/mcp/antigravity/)
 </details>
 
 ## What it may and may not touch
 
-Send a message to the linked Slack channel — proposed first, with the exact text, and posted only once you approve. Everyone in that channel sees it, and it cannot be unsent.
+Send a message to a Slack channel you name. You see the exact text first, and it is posted only once you approve. Everyone in that channel sees it, and it cannot be unsent.
 
-Propose a change through this account's own API, for operations HeyMetra does not cover. Nothing is sent until you approve it, and HeyMetra cannot undo it afterwards.
+Propose a change to this account. Nothing is sent until you approve it, and HeyMetra cannot undo it afterwards.
 
 Permissions are switched on per connection, and one you leave off is a tool your assistant never sees.
 
 | Permission | What it covers | Changes anything? |
 |---|---|---|
-| **Included with the connection** | What HeyMetra needs to set the connection up and nothing more. It cannot be switched off on its own — removing the connection is how you withdraw it. | No, read only |
+| **Included with the connection** | What HeyMetra needs to set the connection up, and nothing more. It cannot be switched off on its own; to withdraw it, remove the connection. | No, read only |
 | **Send messages** | Let your assistant post to this channel, with your approval each time. Turn it off and only the test button can reach it. | Yes — every change waits for your approval |
-| **Direct API access** | Let your assistant use this account's own API for anything HeyMetra's other operations do not cover. It reads directly, and what comes back is the provider's own answer rather than a figure HeyMetra has checked. It can also propose changes — those are never applied until you approve them, and HeyMetra cannot undo one afterwards. | Yes — every change waits for your approval |
+| **Full account access** | Lets your assistant read anything in this account to answer your questions. The figures are the provider's own, not ones HeyMetra has checked. It can also propose changes: none is applied until you approve it, and HeyMetra cannot undo one afterwards. | Yes — every change waits for your approval |
 
 <details>
 <summary>What each permission lets an assistant do, in full</summary>
 
-- Send a message to the linked Slack channel — proposed first, with the exact text, and posted only once you approve. Everyone in that channel sees it, and it cannot be unsent.
-- Ask this account's own API a question HeyMetra's other operations do not cover. Reads only, and the answer is the provider's own rather than a figure HeyMetra has checked.
-- Propose a change through this account's own API, for operations HeyMetra does not cover. Nothing is sent until you approve it, and HeyMetra cannot undo it afterwards.
+- Send a message to a Slack channel you name. You see the exact text first, and it is posted only once you approve. Everyone in that channel sees it, and it cannot be unsent.
+- Ask anything about this account and get the answer from its live data. Reads only, and the figures are the provider's own rather than ones HeyMetra has checked.
+- Propose a change to this account. Nothing is sent until you approve it, and HeyMetra cannot undo it afterwards.
 </details>
 
 Anything that would change something comes back as a proposal you approve, inside bounds that live in code rather than in a prompt: at most 20 messages a rolling day, counted separately from account changes, and an approval that expires after 30 minutes. [How that works](https://heymetra.com/security/).
@@ -196,16 +196,16 @@ Anything that would change something comes back as a proposal you approve, insid
 <details>
 <summary>Your assistant says it cannot choose a channel, or posts nothing at all.</summary>
 
-**Why:** Some assistants cache the list of tools from when they first connected, and an older description of this one said the channel could not be chosen.
+**Why:** Some assistants remember what HeyMetra could do from when they first connected, and do not notice that it has changed.
 
-**Fix:** Start a new conversation in your assistant so it reloads the tools from HeyMetra.
+**Fix:** Start a new conversation in your assistant so it picks up what HeyMetra can do now.
 
 </details>
 
 <details>
 <summary>A message went to the wrong channel.</summary>
 
-**Why:** The channel is named on the approval card, and approving is what sends it — so a message in the wrong place was approved for that place.
+**Why:** The channel is named on the approval card, and approving is what sends it. So a message in the wrong place was approved for that place.
 
 **Fix:** Read the destination line on the card before approving; it names the channel, not an id. HeyMetra cannot unsend a Slack message afterwards, and neither can Slack.
 
@@ -222,12 +222,12 @@ Anything that would change something comes back as a proposal you approve, insid
 
 ## What HeyMetra reads from Slack
 
-Install the app once into your Slack workspace. There is no channel to pick while connecting: the install reaches every public channel in your workspace, plus any private one you invite it to. When you ask for something to be sent, your assistant asks which channel, shows you the exact text and the exact channel, and nothing leaves until you approve it. Everyone in that channel sees what is posted and a posted message cannot be unsent. Reading is what the install itself allows and no more — the channel list it needs in order to send, and whatever else that same grant already covers if you ask for it directly. It holds no permission to read message history.
+Install the app once into your Slack workspace. There is no channel to pick while connecting: the install reaches every public channel in your workspace, plus any private one you invite it to. When you ask for something to be sent, your assistant asks which channel, shows you the exact text and the exact channel, and nothing leaves until you approve it. Everyone in that channel sees what is posted and a posted message cannot be unsent. HeyMetra can list your channels so your assistant can ask which one, and it cannot read message history.
 
 <details>
 <summary>About Slack</summary>
 
-Slack is where your team already works. Connecting it gives your assistant somewhere to post what you ask it to post — and it asks which channel every time, because choosing the channel is choosing who reads it.
+Slack is where your team already works. Connecting it gives your assistant somewhere to post what you ask it to post, and it asks which channel every time, because choosing the channel is choosing who reads it.
 </details>
 
 ## One connection, not seven
