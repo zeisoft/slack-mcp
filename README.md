@@ -37,7 +37,7 @@ Public channels need nothing: the app can post to them without joining. A privat
 
 **3. Ask for something to be sent, and name the channel**
 
-Say what you want posted. Your assistant asks which channel, then shows a card with the exact text and the exact channel before anything is sent. Approve it and it goes; until then nothing has left HeyMetra. It posts what you asked for, when you ask, and nothing here posts on a timer.
+Say what you want posted. Your assistant asks which channel and posts it. To approve each message first, edit the connection and switch on Ask before sending: every post then waits on a card showing the exact text and channel. It posts what you asked for, when you ask.
 
 **4. Check it from the Connections screen**
 
@@ -160,7 +160,7 @@ Full walkthrough: [heymetra.com/mcp/antigravity/](https://heymetra.com/mcp/antig
 
 ## What it may and may not touch
 
-Send a message to a Slack channel you name. You see the exact text first, and it is posted only once you approve. Everyone in that channel sees it, and it cannot be unsent.
+Send a message to a Slack channel you name. Everyone in that channel sees it, and it cannot be unsent. Switch on Ask before sending to approve each one first.
 
 Propose a change to this account. Nothing is sent until you approve it, and HeyMetra cannot undo it afterwards.
 
@@ -169,13 +169,13 @@ Permissions are switched on per connection, and one you leave off is a tool your
 | Permission | What it covers | Changes anything? |
 |---|---|---|
 | **Included with the connection** | What HeyMetra needs to set the connection up, and nothing more. It cannot be switched off on its own; to withdraw it, remove the connection. | No, read only |
-| **Send messages** | Let your assistant post to this channel, with your approval each time. Turn it off and only the test button can reach it. | Yes — every change waits for your approval |
+| **Send messages** | Let your assistant post to this channel. Turn it off and only the test button can reach it. | Yes — every change waits for your approval |
 | **Full account access** | Lets your assistant read anything in this account to answer your questions. The figures are the provider's own, not ones HeyMetra has checked. It can also propose changes: none is applied until you approve it, and HeyMetra cannot undo one afterwards. | Yes — every change waits for your approval |
 
 <details>
 <summary>What each permission lets an assistant do, in full</summary>
 
-- Send a message to a Slack channel you name. You see the exact text first, and it is posted only once you approve. Everyone in that channel sees it, and it cannot be unsent.
+- Send a message to a Slack channel you name. Everyone in that channel sees it, and it cannot be unsent. Switch on Ask before sending to approve each one first.
 - Ask anything about this account and get the answer from its live data. Reads only, and the figures are the provider's own rather than ones HeyMetra has checked.
 - Propose a change to this account. Nothing is sent until you approve it, and HeyMetra cannot undo it afterwards.
 </details>
@@ -205,9 +205,9 @@ Anything that would change something comes back as a proposal you approve, insid
 <details>
 <summary>A message went to the wrong channel.</summary>
 
-**Why:** The channel is named on the approval card, and approving is what sends it. So a message in the wrong place was approved for that place.
+**Why:** Your assistant posts to the channel it was given. A channel name that came from the conversation rather than from you can be the wrong one.
 
-**Fix:** Read the destination line on the card before approving; it names the channel, not an id. HeyMetra cannot unsend a Slack message afterwards, and neither can Slack.
+**Fix:** Name the channel yourself, or switch on Ask before sending so every post shows its channel before it goes. HeyMetra cannot unsend a Slack message afterwards, and neither can Slack.
 
 </details>
 
@@ -222,7 +222,7 @@ Anything that would change something comes back as a proposal you approve, insid
 
 ## What HeyMetra reads from Slack
 
-Install the app once into your Slack workspace. There is no channel to pick while connecting: the install reaches every public channel in your workspace, plus any private one you invite it to. When you ask for something to be sent, your assistant asks which channel, shows you the exact text and the exact channel, and nothing leaves until you approve it. Everyone in that channel sees what is posted and a posted message cannot be unsent. HeyMetra can list your channels so your assistant can ask which one, and it cannot read message history.
+Install the app once into your Slack workspace. There is no channel to pick while connecting: the install reaches every public channel in your workspace, plus any private one you invite it to. When you ask for something to be sent, your assistant asks which channel and posts it there. If you would rather see each message first, switch on Ask before sending for this connection and every post waits for your approval. Everyone in that channel sees what is posted and a posted message cannot be unsent. HeyMetra can list your channels so your assistant can ask which one, and it cannot read message history.
 
 <details>
 <summary>About Slack</summary>
@@ -238,13 +238,13 @@ The reason to read Slack through HeyMetra rather than through a server that only
 
 **Analytics** — [Google Analytics 4](https://heymetra.com/connectors/google-analytics-4/) · [Google Search Console](https://github.com/zeisoft/google-search-console-mcp) · [PostHog](https://github.com/zeisoft/posthog-mcp)
 
-**Ecommerce** — [Shopify](https://heymetra.com/connectors/shopify/) · [Trendyol](https://github.com/zeisoft/trendyol-mcp) · [WooCommerce](https://github.com/zeisoft/woocommerce-mcp)
+**Ecommerce** — [Shopify](https://heymetra.com/connectors/shopify/) · [Trendyol](https://github.com/zeisoft/trendyol-mcp) · [Hepsiburada](https://heymetra.com/connectors/hepsiburada/) · [n11](https://github.com/zeisoft/n11-mcp) · [Çiçeksepeti](https://heymetra.com/connectors/ciceksepeti/) · [Amazon Seller Central](https://github.com/zeisoft/amazon-seller-central-mcp) · [ikas](https://heymetra.com/connectors/ikas/) · [WooCommerce](https://github.com/zeisoft/woocommerce-mcp)
 
 **Revenue & CRM** — [Stripe](https://github.com/zeisoft/stripe-mcp) · [HubSpot](https://heymetra.com/connectors/hubspot/) · [Zoho CRM](https://github.com/zeisoft/zoho-crm-mcp) · [Zoho SalesIQ](https://github.com/zeisoft/zoho-salesiq-mcp) · [Zoho Marketing Automation](https://github.com/zeisoft/zoho-marketing-automation-mcp)
 
 **Mobile** — [AppsFlyer](https://github.com/zeisoft/appsflyer-mcp) · [RevenueCat](https://github.com/zeisoft/revenuecat-mcp) · [Adapty](https://github.com/zeisoft/adapty-mcp) · [App Store Connect](https://github.com/zeisoft/app-store-connect-mcp)
 
-**Work** — [Google Calendar](https://heymetra.com/connectors/google-calendar/) · [Google Meet](https://heymetra.com/connectors/google-meet/) · [Jira](https://github.com/zeisoft/jira-mcp)
+**Work** — [Jira](https://github.com/zeisoft/jira-mcp)
 
 **Channels** — **Slack** · [Telegram](https://github.com/zeisoft/telegram-mcp)
 
