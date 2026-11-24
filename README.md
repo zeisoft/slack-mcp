@@ -222,7 +222,7 @@ It sends at most 20 messages a rolling day, counted separately from account chan
 
 </details>
 
-## What HeyMetra reads from Slack
+## What HeyMetra does with Slack
 
 Install the app once into your Slack workspace. There is no channel to pick while connecting: the install reaches every public channel in your workspace, plus any private one you invite it to. When you ask for something to be sent, your assistant asks which channel and posts it there. If you would rather see each message first, switch on Ask before sending for this connection and every post waits for your approval. Everyone in that channel sees what is posted and a posted message cannot be unsent. HeyMetra can list your channels so your assistant can ask which one, and it cannot read message history.
 
@@ -234,7 +234,7 @@ Slack is where your team already works. Connecting it gives your assistant somew
 
 ## One connection, not seven
 
-The reason to read Slack through HeyMetra rather than through a server that only knows Slack is everything else it can answer in the same breath:
+The reason to send to Slack through HeyMetra rather than through a server that only knows Slack is everything the answer can draw on before it is sent:
 
 **Ads** — [Google Ads](https://github.com/zeisoft/google-ads-mcp)
 
