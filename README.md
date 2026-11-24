@@ -182,7 +182,7 @@ Permissions are switched on per connection, and one you leave off is a tool your
 - Propose a change to this account. Nothing is sent until you approve it, and HeyMetra cannot undo it afterwards.
 </details>
 
-Every message is shown to you and sent only after you say yes, at most 20 a rolling day, counted separately from account changes. [How that works](https://heymetra.com/security/).
+It sends at most 20 messages a rolling day, counted separately from account changes. Turn on Ask before sending and every message waits for your yes first. [How that works](https://heymetra.com/security/).
 
 ## When something goes wrong
 
