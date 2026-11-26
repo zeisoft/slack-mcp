@@ -236,7 +236,7 @@ Slack is where your team already works. Connecting it gives your assistant somew
 
 The reason to send to Slack through HeyMetra rather than through a server that only knows Slack is everything the answer can draw on before it is sent:
 
-**Ads** — [Google Ads](https://github.com/zeisoft/google-ads-mcp)
+**Ads** — [Google Ads](https://github.com/zeisoft/google-ads-mcp) · [Meta](https://github.com/zeisoft/meta-ads-mcp)
 
 **Analytics** — [Google Analytics 4](https://github.com/zeisoft/google-analytics-4-mcp) · [Google Search Console](https://github.com/zeisoft/google-search-console-mcp) · [PostHog](https://github.com/zeisoft/posthog-mcp)
 
